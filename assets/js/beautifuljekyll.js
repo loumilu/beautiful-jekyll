@@ -9,13 +9,6 @@ let BeautifulJekyllJS = {
     setTimeout(BeautifulJekyllJS.initNavbar, 10);
 
     // Shorten the navbar after scrolling a little bit down
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $(".navbar").addClass("top-nav-short");
-        } else {
-            $(".navbar").removeClass("top-nav-short");
-        }
-    });
 
     // On mobile, hide the avatar when expanding the navbar menu
     $('#main-navbar').on('show.bs.collapse', function () {
@@ -136,6 +129,18 @@ let BeautifulJekyllJS = {
     });
   }
 };
+
+$(function() {
+  $('#change-skin').on('click', function () {
+    $("body").toggleClass("page-dark-mode");
+    localStorage.setItem('bj-dark-mode', $("body").hasClass("page-dark-mode"));
+    BeautifulJekyllJS.initNavbar();
+  });
+  if (localStorage.getItem('bj-dark-mode') === 'true') {
+    $('#change-skin').trigger('click');
+  }
+});
+
 
 // 2fc73a3a967e97599c9763d05e564189
 
