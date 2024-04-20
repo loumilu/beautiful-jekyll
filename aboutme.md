@@ -7,7 +7,7 @@ My name is mintsuku and I am a junior developer, writing about the things I've l
 
 - I **love** the rust programming language.
 - I'm a junior developer.
-- I have no clue what I am doing.
+- I have no clue what I'm doing.
 
 There's really nothing else to say!
 
