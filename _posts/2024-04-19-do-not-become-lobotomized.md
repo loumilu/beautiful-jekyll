@@ -23,7 +23,7 @@ You aren't learning shit, full stop. Getting a perfectly tailored solution ready
 
 Programming is problem solving at its core, programming teaches you HOW to think, how can you learn to think and design applications when someone else is doing it for you? I had the courtesy of seeing firsthand how much I was "learning" from AI. I was caught up in a pretty awkward situation: 
 
-I was in the middle of getting my hands wet with programming when the first iteration of ChatGPT released. I had a bit of knowledge and concepts under my belt, enough to prompt the chatbot for Python code, which came out looking like spaghetti but I didn't know or care about that at the time and was just happy the chatbot was outputting useful stuff. Nothing changed until over the course of a few months later when I noticed I was more irritable and "fuck this shit" oriented, I couldn't think of solutions to programming problems I had and my cognitive battery drained quickly and I couldn't sustain a mode of focused thinking as long as I used to. 
+I was in the middle of getting my feet wet with programming when the first iteration of ChatGPT released. I had a bit of knowledge and concepts under my belt, enough to prompt the chatbot for Python code, which came out looking like spaghetti but I didn't know or care about that at the time and was just happy the chatbot was outputting useful stuff. Nothing changed until over the course of a few months later when I noticed I was more irritable and "fuck this shit" oriented, I couldn't think of solutions to programming problems I had and my cognitive battery drained quickly and I couldn't sustain a mode of focused thinking as long as I used to. 
 
 The way I used to use ChatGPT was as follows:
 
@@ -110,7 +110,7 @@ So there was a ton of "basic" things I didn't know about that I couldn't gloss o
 
 Overall this approach to Chip8 has led me to picking up a book on computer architecture, the first few sections of which start by covering binary digits and logic gates. Which has given me the preliminary knowledge I need to understand how Chip8 works, and if I decide to go on and emulate other hardware like [Gameboy](https://en.wikipedia.org/wiki/Game_Boy) or [NES](https://en.wikipedia.org/wiki/Nintendo_Entertainment_System), I will be able to emulate them without using a tutorial as a crutch.
 
-Nothing is wrong with a tutorial, but as you can see I'm a big advocate of "go through the process yourself, and get frustrated as fuck, repeat". And this is mostly because as I've said before about noticing my cognitive abilities diminish from doing lack of said process.
+Nothing is wrong with a tutorial, but as you can see I'm a big advocate of "go through the process yourself, and get frustrated as fuck, repeat". And this is mostly because what I said before regarding my cognitive abilities diminishing from lack of said process.
 
 This might sound like it, but is very different from "reinventing the wheel". You are not inventing anything, you are just trying it yourself before using something that gives you the answer. Tutorials literally give you the answer. This is why people get stuck in what is known as "tutorial hell". Most tutorials teach you to follow and implement solutions that have already been made, but not how to come up with your own solutions. Hence why complete newbies (and me at one point) have issues starting their own project! 
  
