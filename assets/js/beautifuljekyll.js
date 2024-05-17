@@ -145,3 +145,113 @@ $(function() {
 // 2fc73a3a967e97599c9763d05e564189
 
 document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const boxes = document.querySelectorAll('.box-note, .box-note-neutral, .box-warning, .box-error, .box-success, .box-question');
+
+  boxes.forEach(box => {
+    let title, iconClass, textColor;
+    if (box.classList.contains('box-note')) {
+      title = 'Note:';
+      iconClass = 'mdi--info-circle';
+      textColor = 'rgb(64, 64, 64)';
+    } else if (box.classList.contains('box-warning')) {
+      title = 'Warning:';
+      iconClass = 'mdi--alert-triangle';
+      textColor = 'white';
+    } else if (box.classList.contains('box-error')) {
+      title = 'Error:';
+      iconClass = 'mdi--alert-box';
+      textColor = 'white';
+    } else if (box.classList.contains('box-success')) {
+      title = 'Success:';
+      iconClass = 'mdi--check-circle';
+      textColor = 'rgb(64, 64, 64)';
+    }
+    else if (box.classList.contains('box-question')) {
+      title = 'Inquiry:';
+      iconClass = 'mdi--info-square';
+      textColor = 'white';
+    }
+
+    if (title && iconClass && textColor) {
+      box.style.color = textColor; // Apply text color to the entire box
+
+      const titleElement = document.createElement('div');
+      titleElement.classList.add('box-title');
+      
+      const textElement = document.createElement('span');
+      textElement.textContent = title;
+      textElement.style.display = 'flex';
+      textElement.style.alignItems = 'center';
+
+      const iconElement = document.createElement('span');
+      iconElement.classList.add(iconClass);
+      iconElement.style.marginRight = '0.5rem';
+
+      textElement.insertBefore(iconElement, textElement.firstChild);
+      titleElement.appendChild(textElement);
+      box.insertAdjacentElement('afterbegin', titleElement);
+    }
+
+    // Parse and process the content inside the box
+    let content = box.innerHTML;
+    const endMarker = '{end: .box-note}';
+    const endMarkerIndex = content.indexOf(endMarker);
+    
+    if (endMarkerIndex !== -1) {
+      // Extract the content before the end marker and preserve spaces and newlines
+      content = content.slice(0, endMarkerIndex).replace(/\n/g, '<br>');
+      box.innerHTML = content;
+    }
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const codeBlocks = document.querySelectorAll('pre code');
+
+  codeBlocks.forEach((block) => {
+    // Create a container for the code block
+    const codeBlockContainer = document.createElement('div');
+    codeBlockContainer.classList.add('code-block');
+
+    // Wrap the existing code block with the new container
+    block.parentNode.replaceChild(codeBlockContainer, block);
+    codeBlockContainer.appendChild(block);
+
+    // Create the copy button
+    const copyButton = document.createElement('button');
+    copyButton.classList.add('copy-button');
+    
+    // Create the icon element
+    const iconElement = document.createElement('span');
+    iconElement.classList.add('ph--copy-bold');
+
+    // Append the icon to the button
+    copyButton.appendChild(iconElement);
+    codeBlockContainer.appendChild(copyButton);
+
+    // Add the click event listener to the copy button
+    copyButton.addEventListener('click', () => {
+      // Create a textarea element to copy the code to clipboard
+      const textarea = document.createElement('textarea');
+      textarea.value = block.textContent;
+      document.body.appendChild(textarea);
+
+      // Select and copy the text
+      textarea.select();
+      document.execCommand('copy');
+
+      // Remove the textarea element
+      document.body.removeChild(textarea);
+
+      // Provide feedback to the user
+      copyButton.textContent = 'Copied!';
+      setTimeout(() => {
+        copyButton.innerHTML = ''; // Clear the text content
+        copyButton.appendChild(iconElement); // Add the icon back
+      }, 2000);
+    });
+  });
+});

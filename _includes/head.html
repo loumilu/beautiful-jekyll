@@ -1,44 +1,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+  
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+
+
+<script>hljs.highlightAll();</script>
 
   {% capture pagetitle %}
-    {%- if page.share-title -%}
-      {{ page.share-title | strip_html | xml_escape }}
-    {%- elsif page.title -%}
-      {{ page.title | strip_html | xml_escape  }}
-    {%- else -%}
-      {{ site.title | strip_html | xml_escape }}
-    {%- endif -%}
+  {%- if page.share-title -%}
+  {{ page.share-title | strip_html | xml_escape }}
+  {%- elsif page.title -%}
+  {{ page.title | strip_html | xml_escape }}
+  {%- else -%}
+  {{ site.title | strip_html | xml_escape }}
+  {%- endif -%}
   {% endcapture %}
 
   {% capture title %}
-    {%- if site.title and site.title-on-all-pages and (site.title != pagetitle) -%}
-      {{ pagetitle }} | {{ site.title }}
-    {%- else -%}
-      {{ pagetitle }}
-    {%- endif -%}
+  {%- if site.title and site.title-on-all-pages and (site.title != pagetitle) -%}
+  {{ pagetitle }} | {{ site.title }}
+  {%- else -%}
+  {{ pagetitle }}
+  {%- endif -%}
   {% endcapture %}
 
   {% capture description %}
-    {%- if page.share-description -%}
-      {{ page.share-description | strip_html | xml_escape }}
-    {%- elsif page.subtitle -%}
-      {{ page.subtitle | strip_html | xml_escape }}
-    {%- else -%}
-      {%- assign excerpt_length = site.excerpt_length | default: 50 -%}
-      {{ page.content | strip_html | xml_escape | truncatewords: excerpt_length | strip }}
-    {%- endif -%}
+  {%- if page.share-description -%}
+  {{ page.share-description | strip_html | xml_escape }}
+  {%- elsif page.subtitle -%}
+  {{ page.subtitle | strip_html | xml_escape }}
+  {%- else -%}
+  {%- assign excerpt_length = site.excerpt_length | default: 50 -%}
+  {{ page.content | strip_html | xml_escape | truncatewords: excerpt_length | strip }}
+  {%- endif -%}
   {% endcapture %}
 
   <title>{{ title }}</title>
 
   {% capture author %}
-    {%- if page.author -%}
-      {{  page.author | strip_html }}
-    {%- elsif site.author -%}
-      {{ site.author }}
-    {%- endif -%}
+  {%- if page.author -%}
+  {{ page.author | strip_html }}
+  {%- elsif site.author -%}
+  {{ site.author }}
+  {%- endif -%}
   {% endcapture %}
   {% if author != "" %}
   <meta name="author" content="{{ author }}">
@@ -65,33 +88,33 @@
   {% include mathjax.html %}
 
   {% if layout.common-ext-css %}
-    {% for css in layout.common-ext-css %}
-      {% include ext-css.html css=css %}
-    {% endfor %}
+  {% for css in layout.common-ext-css %}
+  {% include ext-css.html css=css %}
+  {% endfor %}
   {% endif %}
 
   {% if layout.common-css %}
-    {% for css in layout.common-css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}">
-    {% endfor %}
+  {% for css in layout.common-css %}
+  <link rel="stylesheet" href="{{ css | relative_url }}">
+  {% endfor %}
   {% endif %}
 
   {% if site.site-css %}
-    {% for css in site.site-css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}">
-    {% endfor %}
+  {% for css in site.site-css %}
+  <link rel="stylesheet" href="{{ css | relative_url }}">
+  {% endfor %}
   {% endif %}
 
   {% if page.ext-css %}
-    {% for css in page.ext-css %}
-      {% include ext-css.html css=css %}
-    {% endfor %}
+  {% for css in page.ext-css %}
+  {% include ext-css.html css=css %}
+  {% endfor %}
   {% endif %}
-  
+
   {% if page.css %}
-    {% for css in page.css %}
-      <link rel="stylesheet" href="{{ css | relative_url }}">
-    {% endfor %}
+  {% for css in page.css %}
+  <link rel="stylesheet" href="{{ css | relative_url }}">
+  {% endfor %}
   {% endif %}
 
   {% if site.fb_app_id %}
@@ -103,19 +126,19 @@
   {% endif %}
 
   {%- capture img -%}
-    {%- if page.share-img -%}
-      {{ page.share-img }}
-    {%- elsif page.cover-img -%}
-      {%- if page.cover-img.first -%}
-        {{ page.cover-img[0].first.first }}
-      {%- else -%}
-        {{ page.cover-img }}
-      {%- endif -%}
-    {%- elsif page.thumbnail-img -%}
-      {{ page.thumbnail-img }}
-    {%- elsif site.avatar -%}
-      {{ site.avatar }}
-    {% endif %}
+  {%- if page.share-img -%}
+  {{ page.share-img }}
+  {%- elsif page.cover-img -%}
+  {%- if page.cover-img.first -%}
+  {{ page.cover-img[0].first.first }}
+  {%- else -%}
+  {{ page.cover-img }}
+  {%- endif -%}
+  {%- elsif page.thumbnail-img -%}
+  {{ page.thumbnail-img }}
+  {%- elsif site.avatar -%}
+  {{ site.avatar }}
+  {% endif %}
   {%- endcapture -%}
   {%- assign img=img | strip -%}
 
@@ -158,7 +181,7 @@
   {% include matomo.html %}
 
   {% if page.comments and site.staticman.repository and site.staticman.branch %}
-  <link rel="stylesheet" href="{{ "/assets/css/staticman.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ " /assets/css/staticman.css" | relative_url }}">
   {% endif %}
 
   <link rel="stylesheet" href="../assets/css/skin-switch.css">
@@ -169,9 +192,9 @@
   {% endif %}
 
   {% if page.head-extra %}
-    {% for file in page.head-extra %}
-      {% include {{ file }} %}
-    {% endfor %}
+  {% for file in page.head-extra %}
+  {% include {{ file }} %}
+  {% endfor %}
   {% endif %}
 
 </head>

@@ -55,21 +55,24 @@
   #change-skin:hover {
     background: #888;
   }
+
+  
   
   /* Below is a copy of the dark mode CSS, all rules prepended with the dark mode switch */
   
   .page-dark-mode {
-    --text-col: #e4e6eb;
-    --page-col: #18191a;
-    --link-col: #7e5af2;
-    --hover-col: #7e5af2;
-    --navbar-col: #242526;
+    --tw-bg-opacity: 1;
+    --text-col: rgb(209, 213, 219);;
+    --page-col: rgb(38 38 38);
+    --link-col: rgb(17, 143, 202);
+    --hover-col: rgb(157, 155, 155);
+    --navbar-col: rgb(38 38 38 / var(--tw-bg-opacity));
     --navbar-text-col: #e4e6eb;
     --navbar-border-col: #393a3b;
-    --footer-col: #242526;
+    --footer-col: rgb(38 38 38 / var(--tw-bg-opacity));
     --footer-text-col: #AAAAAA;
     --footer-link-col: #DFDFDF;
-    --footer-hover-col: #7e5af2;
+    --footer-hover-col: rgb(157, 155, 155);
     --mid-col: #999999;
   }
   
@@ -105,16 +108,21 @@
   .page-dark-mode .box-success {
     color: #404040;
   }
+
+  .page-dark-mode .blog-tags .list-inline-item {
+    background-color: #333533;
+    border-radius: 7%;
+  }
   .page-dark-mode .blog-post .caption {
     color: #aaa;
   }
   .page-dark-mode code {
     color: #e4e6eb;
-    background-color: #121212;
+    background-color: #282c34;
   }
   
   .page-dark-mode .highlight > pre {
-   background-color: #121212;
+   background-color: #282c34;
   }
   .page-dark-mode pre {
     border-color: var(--navbar-border-col);
@@ -126,4 +134,153 @@
   .page-dark-mode .highlight pre.lineno {
     color: #7e5af2
   }
+
+  .prose {
+    --tw-prose-body: #374151;
+    --tw-prose-headings: #111827;
+    --tw-prose-lead: #4b5563;
+    --tw-prose-links: #111827;
+    --tw-prose-bold: #111827;
+    --tw-prose-counters: #6b7280;
+    --tw-prose-bullets: #d1d5db;
+    --tw-prose-hr: #e5e7eb;
+    --tw-prose-quotes: #111827;
+    --tw-prose-quote-borders: #e5e7eb;
+    --tw-prose-captions: #6b7280;
+    --tw-prose-kbd: #111827;
+    --tw-prose-kbd-shadows: 17 24 39;
+    --tw-prose-code: #111827;
+    --tw-prose-pre-code: #e5e7eb;
+    --tw-prose-pre-bg: #1f2937;
+    --tw-prose-th-borders: #d1d5db;
+    --tw-prose-td-borders: #e5e7eb;
+    --tw-prose-invert-body: #d1d5db;
+    --tw-prose-invert-headings: #fff;
+    --tw-prose-invert-lead: #9ca3af;
+    --tw-prose-invert-links: #fff;
+    --tw-prose-invert-bold: #fff;
+    --tw-prose-invert-counters: #9ca3af;
+    --tw-prose-invert-bullets: #4b5563;
+    --tw-prose-invert-hr: #374151;
+    --tw-prose-invert-quotes: #f3f4f6;
+    --tw-prose-invert-quote-borders: #374151;
+    --tw-prose-invert-captions: #9ca3af;
+    --tw-prose-invert-kbd: #fff;
+    --tw-prose-invert-kbd-shadows: 255 255 255;
+    --tw-prose-invert-code: #fff;
+    --tw-prose-invert-pre-code: #d1d5db;
+    --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
+    --tw-prose-invert-th-borders: #4b5563;
+    --tw-prose-invert-td-borders: #374151;
+    font-size: 1rem;
+    line-height:1.75
+}
   
+  code, kbd, samp, pre {
+    font-family: Source Code Pro Variable, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    font-size:1em;
+}
+
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: var(--tw-prose-code);
+    font-weight: 600;
+    font-size:.875em;
+}
+
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)):before {
+    content: "`";
+}
+
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)):after {
+    content: "`";
+}
+
+.prose :where(a code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: inherit;
+}
+
+.prose :where(h1 code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: inherit;
+}
+
+.prose :where(h2 code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: inherit;
+    font-size:.875em;
+}
+
+.prose :where(h3 code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: inherit;
+    font-size:.9em;
+}
+
+.prose :where(h4 code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: inherit;
+}
+
+.prose :where(blockquote code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: inherit;
+}
+
+.prose :where(thead th code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: inherit;
+}
+
+.prose :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: var(--tw-prose-pre-code);
+    background-color: var(--tw-prose-pre-bg);
+    overflow-x: auto;
+    font-weight: 400;
+    font-size: .875em;
+    line-height: 1.7142857;
+    margin-top: 1.7142857em;
+    margin-bottom: 1.7142857em;
+    border-radius: .375rem;
+    padding-top: .8571429em;
+    padding-inline-end: 1.1428571em;
+    padding-bottom: .8571429em;
+    padding-inline-start: 1.1428571em;
+}
+
+.prose :where(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 0;
+    padding: 0;
+    font-weight: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+}
+
+.prose :where(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)):before {
+    content: none;
+}
+
+.prose :where(pre code):not(:where([class~="not-prose"], [class~="not-prose"] *)):after {
+    content: none;
+}
+
+.prose-code\:font-mono :is(:where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))) {
+    font-family: Source Code Pro Variable, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+
+.prose-code\:text-sm :is(:where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))) {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+
+.prose-code\:before\:content-\[\] :is(:where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))):before {
+    content: var(--tw-content);
+}
+
+.prose-code\:after\:content-\[\] :is(:where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))):after {
+    content: var(--tw-content);
+}
+
+.prose-pre\:p-0 :is(:where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *))) {
+    padding: 0;
+}
+
