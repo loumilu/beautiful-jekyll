@@ -4,7 +4,7 @@ title: Do not become lobotomized
 tags: [AI, Programming, Philosophy]
 comments: true
 mathjax: true
-author: mintsuku
+author: minichru
 social-share: false
 ---
 
