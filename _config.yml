@@ -21,7 +21,7 @@ author: mintsuku
 
 navbar-links:
   About Me: "aboutme"
-  Portfolio: "https://mintsuku.dev"
+  Portfolio: "https://mintsuku.xyz"
 
 ################
 # --- Logo --- #
@@ -93,7 +93,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "blog.mintsuku.dev"
+url-pretty: "blog.mintsuku.xyz"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
