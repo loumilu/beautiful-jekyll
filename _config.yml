@@ -13,7 +13,7 @@
 title: don't panic!() 🦀
 
 # Your name to show in the footer
-author: loumilu
+author: mintsuku
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -21,7 +21,7 @@ author: loumilu
 
 navbar-links:
   About Me: "aboutme"
-  Portfolio: "https://loumilu.dev"
+  Portfolio: "https://mintsuku.dev"
 
 ################
 # --- Logo --- #
@@ -49,7 +49,7 @@ round-avatar: true
 social-network-links:
   email: "moxxydev@gmail.com"
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  github: loumilu
+  github: mintsuku
   discord: users/90891376467677184
 #  medium: yourname
 #  reddit: yourname
@@ -93,7 +93,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "blog.loumilu.dev"
+url-pretty: "blog.mintsuku.dev"
 
 # Add the website title to the title of every page
 title-on-all-pages: true
