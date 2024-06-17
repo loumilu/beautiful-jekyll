@@ -36,7 +36,7 @@ Everything above would be added to the stack, the  integers and char array we in
 
 In the add function, we see 2 variables c and d. When this function returns c and d will be popped off of the stack and not continue to occupy space when not needed anymore.  All of the variables inside of main would cease to exist as soon as main returns. 
 
-The heap is the complete opposite. There is no predefined structure to it, you have to make that structure. Not only that but the heap will live on until you use free it explicitly (else you have a memory leak). The heap is great for data that needs to last beyond a specific function. The heap is also great for  objects who's size we do not know at compile time, and need to allocate at run time.
+The heap is the complete opposite. The heap is like a playground, where you can make all sorts of structures. You are only restricted by the size of the heap (which in most cases you don't need to worry about), otherwise you can have fun! Not only that but the heap will live on until you use free it explicitly (else you have a memory leak). The heap is great for data that needs to last beyond a specific function. The heap is also great for  objects who's size we do not know at compile time, and need to allocate at run time.
 
 ```c
 void *ptr = malloc(50);
@@ -44,4 +44,15 @@ void *ptr = malloc(50);
 free(ptr);
 ```
 
+The code above allocates 50 bytes of memory on the heap and returns a pointer to the allocated memory, the type of the pointer is ```void *```, void * star means we don't  care what the type of the data is. You can cast anything to anything in C, an int to a char, void to char, int to double etc. The code then calls the ```free()``` function which releases the memory back to the operating system. After calling ```free()``` the pointer is invalid, and using it afterwards can have undefined behavior. If you aren't familiar with pointers, think of them like signs. Pointers are like signs. They simply point in the direction of the location you are trying to get too. Similarly, pointers point to the specific location in memory (address) where a value is, the actual value is held by the address.
+
+
+### Constructing A Multi-Type Dynamic Array
+
+An array is a contigious block of allocated memory:
+![arrays](../assets/img/arrays.png)
+
+In a fixed size integer array, when you index the array you are saying: "Bring me to the element in the array, starting from the base of the array (index 0), that is at the offset of ``index * sizeof(int)``.".
+
+As you can see in the image, each index is offset by 4 bytes, the size of an integer on 32 and 64 bit machines. So to get to index 2, we must start from the base address, and move forward 2 x 4 bytes, which is 8 bytes. So index 2 will be located at base + 8, Which happens to be the memory location 108 in the diagram. You would then be able to interact with the value stored at that specific location in memory.
 
