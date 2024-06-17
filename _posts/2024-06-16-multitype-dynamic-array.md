@@ -32,7 +32,7 @@ char[5] string = "12345";
 }
 ```
 
-Everything above would be added to the stack, the  integers and char array we initialized, as well as the function arguments in the "add" function. The stacks purpose is to allocate data we want to use temporarily then get rid of when we are done. Without the stack we would have to dynamically allocate all of this data which would make our program. The stack provides a predefined structure which enables great preformance and efficent memory usage.
+Everything above would be added to the stack, the  integers and char array we initialized, as well as the function arguments in the "add" function. The stacks purpose is to allocate data we want to use temporarily then get rid of when we are done. The stack provides a predefined structure which enables great preformance and efficent memory usage.
 
 In the add function, we see 2 variables c and d. When this function returns c and d will be popped off of the stack and not continue to occupy space when not needed anymore.  All of the variables inside of main would cease to exist as soon as main returns. 
 
